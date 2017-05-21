@@ -1,0 +1,33 @@
+{% extends "book_page.html.twig" %}
+
+{% block title %}El Almohadón de Plumas{% endblock %}
+{% block book_title %}El Almohadón de Plumas{% endblock %}
+{% block book_author %}Horacio Quiroga{% endblock %}
+
+
+{% block page_content %}
+<p>
+  Lorem ipsum dolor sit amet, <br>
+  incididunt ut labore et dolore en <mark data-trigger="#help-madagascar">Madagascar</mark>
+  quis nostrud exercitation ullamco laboris <br>
+  Yo salí de mi camarote para ver la costa.
+</p>
+
+<p>
+  Alenim ad minim veniam, <br>
+  quis nostrud exercitation ullamco laboris <br>
+  nisi ut aliquip ex ea commodo consequat.
+</p>
+{% endblock %}
+
+{% block page_help %}
+<div id="help-madagascar" class="help-box">
+  <div class="help-box__content">
+    <p>
+      Madagascar es un país insular situado en el océano Índico,
+      frente la costa sureste del continente africano, al este de Mozambique.
+    </p>
+  </div>
+  <button class="btn js-close-help">Cerrar</button>
+</div>
+{% endblock %}

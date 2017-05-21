@@ -1,0 +1,39 @@
+{% extends "layout.html.twig" %}
+
+{% block body_class %}page-internal{% endblock %}
+{% block content %}
+
+<div class="top-bar">
+    <div class="wrap">
+      <a href="{{ url('homepage') }}" class="top-bar__btn">
+        <svg width="58px" height="58px" viewBox="20 22 58 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <circle id="path-1" cx="49" cy="51" r="29"></circle>
+                <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="58" height="58" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+            </defs>
+            <use id="Oval-1" stroke="#E4E4E4" mask="url(#mask-2)" stroke-width="8" fill="none" xlink:href="#path-1"></use>
+            <polygon id="Path-1" stroke="none" fill="#232323" fill-rule="evenodd" points="52.1903919 64 52.190392 57.885889 46.3902498 57.885889 46.3902498 64 40.2785058 64 40.2785057 50.2754155 32 50.2754155 49.5 38 66 51.0930788 57.9538325 51.0930788 57.9538325 64"></polygon>
+        </svg>
+        Inicio
+      </a>
+
+    </div>
+  </div>
+
+
+
+  <section class="section section--grey" style="min-height: 60vh">
+    <div class="wrap">
+      <div class="row">
+        <div class="col-7 book">
+          <h1 class="book__title">Error</h1>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+{% endblock %}

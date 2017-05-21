@@ -1,0 +1,54 @@
+{% extends "layout.html.twig" %}
+
+{% block body_class %}page-internal page-read{% endblock %}
+
+{% block content %}
+
+{% include "partials/top_bar.html.twig" with {'hide_right_buttons': false} %}
+
+  <section class="section section-page section--grey">
+      <div class="wrap">
+        <div class="row">
+          <div class="col-7 book">
+
+            {% block page_content %}{% endblock %}
+
+          </div>
+
+          <div class="col-5">
+            {% block page_help %}{% endblock %}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="pagination section section--grey">
+      <div class="wrap">
+        <div class="pagination__col">
+          {% if page > 1  %}
+            <a href="{{ url('homepage') }}{{slug}}/{{page - 1}}" class="btn pagination__link pagination__link--left">Anterior</a>
+          {% else %}
+            &nbsp;
+          {% endif %}
+        </div>
+        <div class="pagination__current pagination__col">
+          <div class="pagination__current-title">
+            {% block book_title %}{% endblock %} de {% block book_author %}{% endblock %}
+          </div>
+          <div class="pagination__current-page">
+            Página {{page}} de {{totalPages}}
+          </div>
+        </div>
+        <div class="pagination__col">
+          {% if page < totalPages %}
+            <a href="{{ url('homepage') }}{{slug}}/{{page + 1}}" class="btn pagination__link pagination__link--right">Siguiente</a>
+          {% else %}
+            &nbsp;
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

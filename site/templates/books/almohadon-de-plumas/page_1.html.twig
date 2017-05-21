@@ -1,0 +1,46 @@
+{% extends "book_page.html.twig" %}
+
+{% block title %}El Almohadón de Plumas{% endblock %}
+{% block book_title %}El Almohadón de Plumas{% endblock %}
+{% block book_author %}Horacio Quiroga{% endblock %}
+
+{% block page_content %}
+<p>
+  Mi barco estaba por llegar a la isla <mark data-trigger="#help-madagascar">Madagascar</mark>. <br>
+  Yo salí de mi camarote para ver la costa, <br>
+  que estaba cada vez más cerca. <br>
+  El mar estaba agitado y la sombra de las montañas oscurecía las aguas. <br>
+</p>
+
+<p>
+  <mark data-trigger="#help-madagascar">Madagascar</mark>
+  es una isla grande llena de <mark data-trigger="#help-orquideas">orquídeas</mark> <br>
+  La orquídea es una flor caprichosa.  <br>
+  Por un tiempo, es de color gris y parece dormida.  <br>
+  Hasta que de pronto se despierta y se llena de colores vivos. <br>
+  Es como un pequeño monstruo,  <br>
+  hermoso y al mismo tiempo repugnante. <br>
+</p>
+{% endblock %}
+
+{% block page_help %}
+<div id="help-orquideas" class="help-box">
+  <div class="help-box__content">
+    <p>
+      Planta herbácea de hojas radicales y envainadoras que nacen de la raíz,
+      flores muy vistosas, fruto capsular y raíz con dos tubérculos elipsoidales y simétricos.
+    </p>
+  </div>
+  <button class="btn js-close-help">Cerrar</button>
+</div>
+
+<div id="help-madagascar" class="help-box">
+  <div class="help-box__content">
+    <p>
+      Madagascar es un país insular situado en el océano Índico,
+      frente la costa sureste del continente africano, al este de Mozambique.
+    </p>
+  </div>
+  <button class="btn js-close-help">Cerrar</button>
+</div>
+{% endblock %}

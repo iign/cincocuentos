@@ -1,0 +1,36 @@
+{% extends "layout.html.twig" %}
+
+{% block body_class %}page-internal{% endblock %}
+{% block content %}
+
+{% include "partials/top_bar.html.twig" with {'hide_right_buttons': true} %}
+
+  <section class="section section--grey">
+    <div class="wrap">
+      <div class="row">
+        <div class="col-7 book">
+          <h1 class="book__title">{% block book_title %}Título{% endblock %}</h1>
+          <h2 class="book__by">de {% block book_author %}Autor{% endblock %}</h2>
+          <a href="{{ url('homepage') }}{{block('book_link')}}" class="btn btn-block btn-read-book">
+            Leer en Lectura Fácil
+          </a>
+          <div class="book__links">
+            <a href="{% block book_link_original %}{% endblock %}" class="book__link book__link--book">
+              Leer Versión Original
+            </a>
+            <a href="{% block book_link_exercises %}{% endblock %}" class="book__link book__link--pen book__link--right">
+              Ejercicios
+            </a>
+          </div>
+
+        </div>
+
+        <div class="col-4 col-offset-1">
+          <img src="{% block book_cover %}Portada{% endblock %}" alt="{{ block('book_title') }}">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+{% endblock %}

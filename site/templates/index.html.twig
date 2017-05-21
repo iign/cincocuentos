@@ -1,0 +1,75 @@
+{% extends "layout.html.twig" %}
+{% block title %}Inicio{% endblock %}
+
+{% block body_class %}page-home{% endblock %}
+
+{% block content %}
+<section class="section section--top">
+    <div class="wrap">
+        <h1 class="serif">Bienvenidos a Lorem Ipsum</h1>
+        <div class="row">
+            <div class="col-8">
+                <h3>¿Qué es la Lectura Fácil?</h3>
+                <p>
+                    Lectura fácil es lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.Ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                </p>
+                <p>
+                    <h3>¿Cómo funciona?</h3>
+                    Podes ver una guia para usar este coso acá:
+                </p>
+                <a href="#" class="btn">Ver Guía</a>
+            </div>
+            <div class="col-4">
+                <img src="/uploads/img-1.jpg" alt="">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<section class="section section--grey section--border-top">
+    <div class="wrap">
+        <h2>Listado de Cuentos</h2>
+        <div class="row">
+            <div class="col-4">
+                <a href="{{ url('book', {slug: 'almohadon-de-plumas', page: 0}) }}" class="story">
+                    <img src="/uploads/img-1.jpg" alt="El Cazador de Orquídeas" class="story__img">
+                    <h4 class="story__title">El Cazador de Orquídeas</h4>
+                    <h5 class="story__author">de Roberto Arlt</h5>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="#" class="story">
+                    <img src="/uploads/img-1.jpg" alt="El Cazador de Orquídeas" class="story__img">
+                    <h4 class="story__title">El Cazador de Orquídeas</h4>
+                    <h5 class="story__author">de Roberto Arlt</h5>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="#" class="story">
+                    <img src="/uploads/img-1.jpg" alt="El Cazador de Orquídeas" class="story__img">
+                    <h4 class="story__title">El Cazador de Orquídeas</h4>
+                    <h5 class="story__author">de Roberto Arlt</h5>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <a href="#" class="story">
+                    <img src="/uploads/img-2.jpg" alt="El Almoadón de Plumas" class="story__img">
+                    <h4 class="story__title">El Almoadón de Plumas</h4>
+                    <h5 class="story__author">de Horacio Quiroga</h5>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="#" class="story">
+                    <img src="/uploads/img-1.jpg" alt="El Cazador de Orquídeas" class="story__img">
+                    <h4 class="story__title">El Cazador de Orquídeas</h4>
+                    <h5 class="story__author">de Roberto Arlt</h5>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

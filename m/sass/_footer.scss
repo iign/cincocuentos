@@ -1,0 +1,57 @@
+.footer {
+  color: white;
+  background-color: #202845;
+  padding: 40px 0;
+  font-size: 14px;
+  text-align: center;
+  @media($desktop) {
+    text-align: left;
+  }
+
+  a {
+    color: white;
+  }
+
+  &__title {
+    margin-top: 20px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    @extend .serif;
+    font-size: 36px;
+  }
+
+  &__right {
+    line-height: 1.5;
+    @media($desktop) {
+      text-align: right;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    @media($desktop) {
+      margin: 0;
+      display: inline-block;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    margin-right: 10px;
+    padding-right: 10px;
+    position: relative;
+    &:not(:last-child):after {
+      display: inline-block;
+      content: "·";
+      position: relative;
+      left: 10px;
+    }
+  }
+}
+
+.footer-bottom {
+  background-color: #151b33;
+  height: 40px;
+}

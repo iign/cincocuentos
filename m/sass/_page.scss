@@ -1,0 +1,167 @@
+
+.book {
+  font-size: 18px;
+
+  // Cambio de tamaño
+  .size & {
+    font-size: 24px;
+  }
+
+  .btn-read-book {
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    @extend .serif;
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 0;
+    padding-top: 65px;
+  }
+
+  &__by {
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    color: #4e4e4e;
+    margin: 0 0 40px;
+  }
+
+  &__link {
+    color: $color-main;
+    padding-left: 32px;
+    background-position: center left;
+    background-repeat: no-repeat;
+    font-size: 20px;
+
+    &--right {
+      @media(min-width: 480px) {
+        float: right;
+      }
+    }
+    &--pen {
+      background-image: url(../img/icon-pen.png);
+    }
+    &--book {
+      background-image: url(../img/icon-book.png);
+    }
+  }
+}
+
+mark {
+  color: $color-main;
+  text-decoration: underline;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+.help-box {
+  @extend %centerer;
+  width: 90%;
+  background: white;
+  padding: 10px 20px 20px 20px;
+  box-shadow: 0 1px 16px 0 #b1b1b1;
+  border-radius: 6px;
+  z-index: 100;
+  position: fixed;
+  transition: 200ms;
+  display: none;
+
+  &--show {
+    display: block;
+  }
+
+  @media($desktop) {
+    position: relative;
+    width: 100%;
+    top: auto;
+    left: auto;
+    transform: translate(0, 0);
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+.pagination {
+  @extend %clearfix;
+  &__col {
+    width: 100%;
+    @media($desktop) {
+      display: inline-block;
+      width: 25%;
+      float: left;
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  &__current {
+    text-align: center;
+    margin: 20px 0;
+    line-height: 1.5;
+    font-size: 18px;
+    color: #686868;
+    @media($desktop) {
+      margin: 0;
+      padding: 0 15px;
+      width: 50%;
+    }
+  }
+
+  &__link.btn {
+    height: 70px;
+    line-height: 55px;
+    background-repeat: no-repeat;
+    background-position: center left 10px;
+    background-image: url(../img/icon-arrow-left.svg);
+    text-align: center;
+    padding-left: 65px;
+    display: block;
+    @media($desktop) {
+      display: inline-block;
+    }
+  }
+  &__link--right.btn {
+    padding-left: 28px;
+    background-position: center right 10px;
+    background-image: url(../img/icon-arrow-right.svg);
+    padding-right: 65px;
+  }
+}
+
+.section-page {
+  .contrast & {
+    background-color: #222;
+    color: white;
+    mark {
+      color: #96acff;
+    }
+    .help-box {
+      background-color: #333;
+      box-shadow: 0 1px 16px 0 #111;
+    }
+  }
+}
+
+.vowels {
+  .vowel {
+    color: red;
+  }
+
+  mark {
+    .vowel {
+      color: red;
+    }
+  }
+
+  &.contrast {
+    mark {
+      .vowel {
+        color: red;
+      }
+    }
+  }
+}

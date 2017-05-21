@@ -1,0 +1,86 @@
+// Simple Grid
+
+$gutter: 40px;
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  position: relative;
+  margin-left: -$gutter/4;
+  margin-right: -$gutter/4;
+  @media ($desktop) {
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+  }
+}
+
+.row [class^="col"] {
+  float: left;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  min-height: 0.125rem;
+  padding: 0 10px;
+  @media ($desktop) {
+    padding: 0 20px;
+    margin-bottom: 0;
+
+    // Offsets
+    &.col-offset-1 {
+      margin-left: (100% / 12);
+    }
+    // TODO: other...
+  }
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  width: 100%;
+}
+
+@media ($desktop) {
+  .col-1 {
+    width: (100% / 12);
+  }
+  .col-2 {
+    width: (100% / 6);
+  }
+  .col-3 {
+    width: (100% / 4);
+  }
+  .col-4, .col-one-third {
+    width: (100% / 3);
+  }
+  .col-5 {
+    width: 100% / (12 / 5);
+  }
+  .col-6, .col-half {
+    width: (100% / 2);
+  }
+  .col-7 {
+    width: (100% / (12 / 7));
+  }
+  .col-8, .col-two-thirds {
+    width: (100% / (12 / 8));
+  }
+  .col-9 {
+    width: (100% / (12 / 9));
+  }
+  .col-10 {
+    width: (100% / (12 / 10));
+  }
+  .col-11 {
+    width: (100% / (12 / 11));
+  }
+  .col-12 {
+    width: 100%;
+  }
+}

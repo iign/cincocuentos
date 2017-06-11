@@ -729,6 +729,16 @@ h3 {
   padding-top: 20px;
 }
 
+.page-read .top-bar {
+  height: 150px;
+}
+
+@media (min-width: 769px) {
+  .page-read .top-bar {
+    height: 110px;
+  }
+}
+
 @media (min-width: 769px) {
   .top-bar {
     padding-top: 25px;

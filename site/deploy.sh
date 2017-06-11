@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rsync -avr --exclude 'node_modules' --exclude 'sass' ./ montag@montag.webfactional.com:/home/montag/webapps/lecturafacil
+rsync -avr --exclude 'var/cache' --exclude 'var/logs' --exclude 'vendor' ./ montag@montag.webfactional.com:/home/montag/webapps/lecturafacil

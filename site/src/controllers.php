@@ -18,6 +18,17 @@ $app->get('/', function () use ($app) {
 //     return $app['twig']->render('books/almohadon_page_1.html.twig', array('title' => 'Almohadón de plumas'));
 // })->bind('almohadon');
 
+
+// Books
+$app->get('/{slug}/', function ($slug) use ($app) {
+    $fi = new FilesystemIterator("../templates/books/$slug", FilesystemIterator::SKIP_DOTS);
+    $totalPages = iterator_count($fi) - 1;
+
+    return $app['twig']->render("books/$slug/intro.html.twig", array('totalPages' => $totalPages));
+
+})
+->bind('book-intro'); // Route name
+
 // Books
 $app->get('/{slug}/{page}/', function ($slug, $page) use ($app) {
     $fi = new FilesystemIterator("../templates/books/$slug", FilesystemIterator::SKIP_DOTS);

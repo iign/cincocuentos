@@ -26,7 +26,13 @@ html {
 body {
   &.page-internal {
     padding-top: 110px;
+    background-color: #fafafa;
   }
+  padding-bottom: 335px;
+  @media($desktop){
+    padding-bottom: 214px; // Footer height
+  }
+
 }
 
 .serif {
@@ -94,7 +100,7 @@ h3 {
   transition: all .15s ease;
   display: inline-block;
   &:hover {
-    transform: translateY(-1px);
+    background-color: #1835a2;
   }
   &:active {
     transform: translateY(1px);
@@ -150,6 +156,12 @@ h3 {
   width: 100%;
   z-index: 10;
   padding-top: 20px;
+  .page-read &{
+    height: 150px;
+    @media($desktop){
+      height: 110px;
+    }
+  }
   @media($desktop) {
     padding-top: 25px;
   }
@@ -168,7 +180,7 @@ h3 {
       transition: 300ms;
     }
 
-    &:hover {
+    &:hover, &.active {
       > svg {
         polygon, path {
           fill: $color-main;

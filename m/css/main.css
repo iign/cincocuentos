@@ -450,6 +450,7 @@ mark {
   line-height: 1.5;
   font-size: 18px;
   color: #686868;
+  padding-top: 9px;
 }
 
 @media (min-width: 769px) {
@@ -508,6 +509,13 @@ mark {
 
 .vowels.contrast mark .vowel {
   color: red;
+}
+
+.footer-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .footer {
@@ -592,8 +600,19 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  padding-bottom: 335px;
+}
+
 body.page-internal {
   padding-top: 110px;
+  background-color: #fafafa;
+}
+
+@media (min-width: 769px) {
+  body {
+    padding-bottom: 214px;
+  }
 }
 
 .serif, .book__title, .footer__title, h2 {
@@ -667,8 +686,7 @@ h3 {
 }
 
 .btn:hover {
-  -ms-transform: translateY(-1px);
-      transform: translateY(-1px);
+  background-color: #1835a2;
 }
 
 .btn:active {
@@ -729,6 +747,16 @@ h3 {
   padding-top: 20px;
 }
 
+.page-read .top-bar {
+  height: 150px;
+}
+
+@media (min-width: 769px) {
+  .page-read .top-bar {
+    height: 110px;
+  }
+}
+
 @media (min-width: 769px) {
   .top-bar {
     padding-top: 25px;
@@ -749,11 +777,11 @@ h3 {
   transition: 300ms;
 }
 
-.top-bar__btn:hover > svg polygon, .top-bar__btn:hover > svg path {
+.top-bar__btn:hover > svg polygon, .top-bar__btn:hover > svg path, .top-bar__btn.active > svg polygon, .top-bar__btn.active > svg path {
   fill: #2d4cc1;
 }
 
-.top-bar__btn:hover > svg use, .top-bar__btn:hover > svg circle {
+.top-bar__btn:hover > svg use, .top-bar__btn:hover > svg circle, .top-bar__btn.active > svg use, .top-bar__btn.active > svg circle {
   stroke: #2d4cc1;
 }
 

@@ -8,32 +8,34 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
             <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css"/>
+
         </head>
         <body class="{% block body_class %}{% endblock %}">
 
             {% block content %}{% endblock %}
 
-            <footer class="footer">
-                <div class="wrap">
-                    <div class="row">
-                        <div class="col-8">
-                            <a href="#" class="footer__title">Lorem Ipsum</a>
-                            <a href="#" class="footer__link">Inicio</a>
-                            <a href="#" class="footer__link">Listado de Cuentos</a>
-                            <a href="#" class="footer__link">Contacto</a>
-                        </div>
-                        <div class="col-4 footer__right">
-                            <div>
-                                <img class="footer__logo" src="http://placehold.it/190x60" alt="">
+            <div class="footer-wrap">
+                <footer class="footer">
+                    <div class="wrap">
+                        <div class="row">
+                            <div class="col-8">
+                                <a href="#" class="footer__title">Lorem Ipsum</a>
+                                <a href="#" class="footer__link">Inicio</a>
+                                <a href="#" class="footer__link">Listado de Cuentos</a>
+                                <a href="#" class="footer__link">Contacto</a>
                             </div>
-                            <span class="by">Proyecto creado por
-                                <a href="#">Lengua Franca</a>.</span>
+                            <div class="col-4 footer__right">
+                                <div>
+                                    <img class="footer__logo" src="http://placehold.it/190x60" alt="">
+                                </div>
+                                <span class="by">Proyecto creado por
+                                    <a href="#">Lengua Franca</a>.</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </footer>
-            <footer class="footer-bottom"></footer>
-
+                </footer>
+                <footer class="footer-bottom"></footer>
+            </div>
             <script type="text/javascript">
                 var _gaq = _gaq || [];
                 _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);

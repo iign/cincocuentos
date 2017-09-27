@@ -54,15 +54,18 @@ function parseVowels () {
   // Cambiar tamaño de letra
   $('.js-btn-size').on('click', function () {
     $('body').toggleClass('size')
+    $(this).toggleClass('active')
   })
 
   // Cambiar contraste
   $('.js-btn-contrast').on('click', function () {
     $('body').toggleClass('contrast')
+    $(this).toggleClass('active')
   })
 
   // Diferenciar vocales
   $('.js-btn-vowels').on('click', function () {
     $('body').toggleClass('vowels')
+    $(this).toggleClass('active')
   })
 })()

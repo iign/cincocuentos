@@ -12,6 +12,7 @@ gulp.task('sass', function () {
     .pipe(autoprefixer('last 3 versions'))
     .pipe(sourcemaps.write('/'))
     .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('../site/web/css'))
     .pipe(browserSync.stream())
 })
 

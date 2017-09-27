@@ -1,3 +1,3 @@
 #!/bin/bash
-
-rsync -avr --exclude 'var/cache' --exclude 'var/logs' --exclude 'vendor' ./ montag@montag.webfactional.com:/home/montag/webapps/lecturafacil
+rm -rf var/cache/twig/*
+rsync -avr --exclude 'var' --exclude 'vendor' ./ montag@montag.webfactional.com:/home/montag/webapps/lecturafacil

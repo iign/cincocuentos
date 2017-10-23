@@ -2,3 +2,6 @@
 /vendor
 /build
 /composer.lock
+
+var/cache
+var/logs

@@ -1,6 +1,6 @@
 # Start
 
-Basic starting point for HTML design.
+HTML/CSS design.
 
 ## Install Dependencies
 

@@ -22,9 +22,14 @@ $app->get('/', function () use ($app) {
 // Books
 $app->get('/{slug}/', function ($slug) use ($app) {
     $fi = new FilesystemIterator("../templates/books/$slug", FilesystemIterator::SKIP_DOTS);
-    $totalPages = iterator_count($fi) - 1;
+    $totalPages = 0;
+    foreach ($fi as $fileinfo) {
+        if(strpos($fi->current(), 'page_') !== false){
+            $totalPages++;
+        }
+    }
 
-    return $app['twig']->render("books/$slug/intro.html.twig", array('totalPages' => $totalPages));
+    return $app['twig']->render("books/$slug/intro.html.twig", array('totalPages' => $totalPages, 'slug' => $slug));
 
 })
 ->bind('book-intro'); // Route name
@@ -32,10 +37,15 @@ $app->get('/{slug}/', function ($slug) use ($app) {
 // Books
 $app->get('/{slug}/{page}/', function ($slug, $page) use ($app) {
     $fi = new FilesystemIterator("../templates/books/$slug", FilesystemIterator::SKIP_DOTS);
-    $totalPages = iterator_count($fi) - 1;
+    $totalPages = 0;
+    foreach ($fi as $fileinfo) {
+        if(strpos($fi->current(), 'page_') !== false){
+            $totalPages++;
+        }
+    }
 
     if (!$page) {
-        return $app['twig']->render("books/$slug/intro.html.twig", array('totalPages' => $totalPages));
+        return $app['twig']->render("books/$slug/intro.html.twig", array('totalPages' => $totalPages, 'slug' => $slug));
     }
     else{
         return $app['twig']->render("books/$slug/page_$page.html.twig",

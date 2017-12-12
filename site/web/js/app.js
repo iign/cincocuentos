@@ -1,4 +1,11 @@
 /* global $ */
+
+var storage = window.localStorage
+
+
+init()
+
+
 function markVowels (word) {
   return word.replace(/(a|e|i|o|u)/ig, '<span class="vowel">$1</span>')
 }
@@ -35,6 +42,43 @@ function parseVowels () {
   })
 }
 
+
+function toggleSize(updateOption){
+  $('body').toggleClass('size')
+  $('.js-btn-size').toggleClass('active')
+  if(updateOption){
+      storage.setItem(slug + '_size', storage.getItem(slug + '_size') == 'on' ? 'off' : 'on')
+  }
+}
+
+function toggleContrast(updateOption){
+  $('body').toggleClass('contrast')
+  $('.js-btn-contrast').toggleClass('active')
+  if(updateOption){
+      storage.setItem(slug + '_contrast', storage.getItem(slug + '_contrast') == 'on' ? 'off' : 'on')
+  }
+}
+
+function toggleVowels(updateOption){
+  $('body').toggleClass('vowels')
+  $('.js-btn-vowels').toggleClass('active')
+  if(updateOption){
+      storage.setItem(slug + '_vowels', storage.getItem(slug + '_vowels') == 'on' ? 'off' : 'on')
+  }
+}
+
+function init(){
+  if(storage.getItem(slug + '_size') == 'on'){
+    toggleSize(false)
+  }
+  if(storage.getItem(slug + '_contrast') == 'on'){
+    toggleContrast(false)
+  }
+  if(storage.getItem(slug + '_vowels') == 'on'){
+    toggleVowels(false)
+  }
+}
+
 ;(function () {
   if ($('body').hasClass('page-read')) {
     parseVowels()
@@ -53,19 +97,17 @@ function parseVowels () {
 
   // Cambiar tamaño de letra
   $('.js-btn-size').on('click', function () {
-    $('body').toggleClass('size')
-    $(this).toggleClass('active')
+    toggleSize(true)
   })
 
   // Cambiar contraste
   $('.js-btn-contrast').on('click', function () {
-    $('body').toggleClass('contrast')
-    $(this).toggleClass('active')
+    toggleContrast(true)
   })
 
   // Diferenciar vocales
   $('.js-btn-vowels').on('click', function () {
-    $('body').toggleClass('vowels')
-    $(this).toggleClass('active')
+    toggleVowels(true)
   })
+
 })()
